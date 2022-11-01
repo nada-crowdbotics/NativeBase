@@ -57,6 +57,11 @@ export interface InterfaceRadioProps extends InterfaceBoxProps<IRadioProps> {
    * If given, will use this icon instead of the default.
    */
   icon?: JSX.Element;
+
+  /**
+   * If given, will hide the radio button and the circle around it
+   */
+  hideIcon?: boolean;
   /**
    * Ref to be passed to Icon's wrapper Box
    */

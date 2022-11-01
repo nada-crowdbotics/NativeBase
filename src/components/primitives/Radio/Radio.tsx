@@ -36,6 +36,7 @@ const RadioComponent = memo(
         size,
         children,
         wrapperRef,
+        hideIcon,
         isHovered: isHoveredProp,
         isPressed: isPressedProp,
         isFocused: isFocusedProp,
@@ -129,13 +130,15 @@ const RadioComponent = memo(
               {/* Interaction Wrapper */}
               <Box {..._interactionBox} />
               {/* radio */}
-              <Center {...resolvedProps}>
-                {icon && sizedIcon && isChecked ? (
-                  sizedIcon()
-                ) : (
-                  <CircleIcon {..._icon} opacity={isChecked ? 1 : 0} />
-                )}
-              </Center>
+              {!hideIcon && (
+                <Center {...resolvedProps}>
+                  {icon && sizedIcon && isChecked ? (
+                    sizedIcon()
+                  ) : (
+                    <CircleIcon {..._icon} opacity={isChecked ? 1 : 0} />
+                  )}
+                </Center>
+              )}
             </Center>
             {/* Label */}
             {wrapStringChild(children, _text)}
