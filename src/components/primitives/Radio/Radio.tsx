@@ -155,6 +155,7 @@ const Radio = (
     children,
     size,
     wrapperRef,
+    hideIcon,
     isHovered: isHoveredProp,
     isPressed: isPressedProp,
     isFocused: isFocusedProp,
@@ -203,6 +204,7 @@ const Radio = (
       size={size}
       ref={ref}
       icon={icon}
+      hideIcon={hideIcon}
       wrapperRef={wrapperRef}
       isHovered={isHoveredProp}
       isPressed={isPressedProp}
