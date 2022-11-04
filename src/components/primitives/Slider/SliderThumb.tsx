@@ -83,14 +83,14 @@ function SliderThumb(props: ISliderThumbProps, ref: any) {
         : undefined,
     left:
       orientation !== 'vertical'
-        ? `${state.getThumbPercent(0) * 100}%`
+        ? `${(state.getThumbPercent(0)) * 100}%`
         : undefined,
     transform:
       orientation === 'vertical'
         ? [{ translateY: parseInt(thumbAbsoluteSize) / 2 }]
-        : [{ translateX: -parseInt(thumbAbsoluteSize) / 2 }],
+        : [{ translateX: -(state.getThumbPercent(0) * parseInt(thumbAbsoluteSize) - 2) }],
   };
-
+  
   thumbStyles.transform.push({
     scale: state.isThumbDragging(0) ? resolvedProps.scaleOnPressed : 1,
   });
