@@ -116,6 +116,7 @@ const CheckboxComponent = React.memo(
 
     const {
       icon,
+      hideIcon,
       _interactionBox,
       _icon,
       _stack,
@@ -167,6 +168,7 @@ const CheckboxComponent = React.memo(
 
     return (
       <Pressable
+        style={{width: '100%'}}
         disabled={isDisabled}
         {...(pressableProps as IPressableProps)}
         {...accessibilityProps}
@@ -191,14 +193,14 @@ const CheckboxComponent = React.memo(
         )}
       >
         <Stack {...layoutProps} {..._stack}>
-          <Center>
+          {!hideIcon &&  <Center>
             {/* Interaction Wrapper */}
             <Box {..._interactionBox} />
             {/* Checkbox */}
             <Center {...nonAccessibilityProps}>
-              <SizedIcon icon={icon} _icon={_icon} isChecked={isChecked} />
+              {icon ? icon : <SizedIcon icon={icon} _icon={_icon} isChecked={isChecked} />}
             </Center>
-          </Center>
+          </Center>}
           {/* Label */}
           {wrapStringChild(combinedProps.children, _text)}
         </Stack>
