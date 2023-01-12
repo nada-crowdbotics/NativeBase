@@ -81,6 +81,12 @@ export interface InterfaceCheckbox extends InterfaceBoxProps<ICheckboxProps> {
    * If given, will use this icon instead of the default.
    */
   icon?: JSX.Element;
+  
+  /**
+   * If fakse, will hide the icon.
+   */
+  hideIcon?: boolean;
+  
   /**
    * Passed props wilICheckboxGroupPropsl be applied on disabled state.
    */
